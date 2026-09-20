@@ -16,15 +16,65 @@
     <Filter Include="Source Files\MainRefrance/">
       <UniqueIdentifier>{ee725054-4e90-42fa-ae23-389396e291c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Login/">
+      <UniqueIdentifier>{fddd9070-b81e-418e-8d82-3e7612ad0fb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Login/">
+      <UniqueIdentifier>{a5f33838-5ff1-4c28-b826-de9ae22e8385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application/">
+      <UniqueIdentifier>{66a7319c-7a0c-48ef-b3a7-f332b4a2113e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application/">
+      <UniqueIdentifier>{9fdc6812-fc8f-481c-8a61-19c8012f9ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataFileProcessing/">
+      <UniqueIdentifier>{ffde3806-d7e5-447b-b560-4c24a11a7d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataFileProcessing/">
+      <UniqueIdentifier>{d6c0ae9c-def2-4f25-b0ab-feebc8378ab6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files\MainRefrance/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\Login\Login.cpp">
+      <Filter>Source Files\Login/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\Login\LoginUi.cpp">
+      <Filter>Source Files\Login/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\Application\Application.cpp">
+      <Filter>Source Files\Application/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\Application\ApplicationUi.cpp">
+      <Filter>Source Files\Application/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\DataFileProcessing\DataConverter.cpp">
+      <Filter>Source Files\DataFileProcessing/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\DataFileProcessing\FilesOperations.cpp">
+      <Filter>Source Files\DataFileProcessing/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\DataFileProcessing\DataProcessing.cpp">
+      <Filter>Source Files\DataFileProcessing/</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
       <Filter>Source Files\MainRefrance/</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scr\Header\Login\Login.h">
+      <Filter>Header Files\Login/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\Header\Application\Application.h">
+      <Filter>Header Files\Application/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h">
+      <Filter>Header Files\DataFileProcessing/</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
