@@ -22,12 +22,6 @@
     <Filter Include="Header Files\Login/">
       <UniqueIdentifier>{a5f33838-5ff1-4c28-b826-de9ae22e8385}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Application/">
-      <UniqueIdentifier>{66a7319c-7a0c-48ef-b3a7-f332b4a2113e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Application/">
-      <UniqueIdentifier>{9fdc6812-fc8f-481c-8a61-19c8012f9ca9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\DataFileProcessing/">
       <UniqueIdentifier>{ffde3806-d7e5-447b-b560-4c24a11a7d61}</UniqueIdentifier>
     </Filter>
@@ -39,6 +33,12 @@
     </Filter>
     <Filter Include="Header Files\Helpers/">
       <UniqueIdentifier>{75b5493e-5c9d-4e57-a74f-d2c2be0ccca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System/">
+      <UniqueIdentifier>{66a7319c-7a0c-48ef-b3a7-f332b4a2113e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System/">
+      <UniqueIdentifier>{9fdc6812-fc8f-481c-8a61-19c8012f9ca9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,10 +61,10 @@
       <Filter>Source Files\DataFileProcessing/</Filter>
     </ClCompile>
     <ClCompile Include="scr\Source\System\System.cpp">
-      <Filter>Source Files\Application/</Filter>
+      <Filter>Source Files\System/</Filter>
     </ClCompile>
     <ClCompile Include="scr\Source\System\SystemUi.cpp">
-      <Filter>Source Files\Application/</Filter>
+      <Filter>Source Files\System/</Filter>
     </ClCompile>
     <ClCompile Include="scr\Source\Helpers\Helpers.cpp">
       <Filter>Source Files\Helpers/</Filter>
@@ -80,7 +80,7 @@
       <Filter>Header Files\Login/</Filter>
     </ClInclude>
     <ClInclude Include="scr\Header\Application\System.h">
-      <Filter>Header Files\Application/</Filter>
+      <Filter>Header Files\System/</Filter>
     </ClInclude>
     <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h">
       <Filter>Header Files\DataFileProcessing/</Filter>

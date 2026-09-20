@@ -16,3 +16,9 @@ namespace SystemCore
 	extern std::string ClientDataFile;
 	extern std::string delimiter;
 }
+
+namespace SystemConfig
+{
+	extern std::string Separator;
+	extern short PrintStart;
+}

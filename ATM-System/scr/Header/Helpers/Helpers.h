@@ -2,3 +2,5 @@
 #include <iostream>
 
 void ResetScreen();
+
+std::string ReadText(std::string msg, short width = 0);
