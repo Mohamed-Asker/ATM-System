@@ -45,12 +45,6 @@
     <ClCompile Include="scr\Source\Login\LoginUi.cpp">
       <Filter>Source Files\Login/</Filter>
     </ClCompile>
-    <ClCompile Include="scr\Source\Application\Application.cpp">
-      <Filter>Source Files\Application/</Filter>
-    </ClCompile>
-    <ClCompile Include="scr\Source\Application\ApplicationUi.cpp">
-      <Filter>Source Files\Application/</Filter>
-    </ClCompile>
     <ClCompile Include="scr\Source\DataFileProcessing\DataConverter.cpp">
       <Filter>Source Files\DataFileProcessing/</Filter>
     </ClCompile>
@@ -59,6 +53,12 @@
     </ClCompile>
     <ClCompile Include="scr\Source\DataFileProcessing\DataProcessing.cpp">
       <Filter>Source Files\DataFileProcessing/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\System\System.cpp">
+      <Filter>Source Files\Application/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\System\SystemUi.cpp">
+      <Filter>Source Files\Application/</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +70,7 @@
     <ClInclude Include="scr\Header\Login\Login.h">
       <Filter>Header Files\Login/</Filter>
     </ClInclude>
-    <ClInclude Include="scr\Header\Application\Application.h">
+    <ClInclude Include="scr\Header\Application\System.h">
       <Filter>Header Files\Application/</Filter>
     </ClInclude>
     <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h">
