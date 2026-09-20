@@ -34,6 +34,12 @@
     <Filter Include="Header Files\DataFileProcessing/">
       <UniqueIdentifier>{d6c0ae9c-def2-4f25-b0ab-feebc8378ab6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Helpers/">
+      <UniqueIdentifier>{a2f8a268-cf63-479a-8bec-662b7b8a1beb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers/">
+      <UniqueIdentifier>{75b5493e-5c9d-4e57-a74f-d2c2be0ccca7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,6 +66,9 @@
     <ClCompile Include="scr\Source\System\SystemUi.cpp">
       <Filter>Source Files\Application/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\Source\Helpers\Helpers.cpp">
+      <Filter>Source Files\Helpers/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -75,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h">
       <Filter>Header Files\DataFileProcessing/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\Header\Helpers\Helpers.h">
+      <Filter>Header Files\Helpers/</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

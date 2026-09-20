@@ -143,6 +143,7 @@
     <ClCompile Include="scr\Source\DataFileProcessing\DataConverter.cpp" />
     <ClCompile Include="scr\Source\DataFileProcessing\DataProcessing.cpp" />
     <ClCompile Include="scr\Source\DataFileProcessing\FilesOperations.cpp" />
+    <ClCompile Include="scr\Source\Helpers\Helpers.cpp" />
     <ClCompile Include="scr\Source\Login\Login.cpp" />
     <ClCompile Include="scr\Source\Login\LoginUi.cpp" />
     <ClCompile Include="scr\Source\System\System.cpp" />
@@ -154,6 +155,7 @@
   <ItemGroup>
     <ClInclude Include="scr\Header\Application\System.h" />
     <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h" />
+    <ClInclude Include="scr\Header\Helpers\Helpers.h" />
     <ClInclude Include="scr\Header\Login\Login.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
