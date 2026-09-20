@@ -153,10 +153,10 @@
     <None Include="..\.gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="scr\Header\Application\System.h" />
     <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h" />
     <ClInclude Include="scr\Header\Helpers\Helpers.h" />
     <ClInclude Include="scr\Header\Login\Login.h" />
+    <ClInclude Include="scr\Header\System\System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

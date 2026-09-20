@@ -8,7 +8,8 @@
 int main()
 {
 	std::vector <stClient> vClients = LoadClientDataFromFile(SystemCore::ClientDataFile, SystemCore::delimiter);
-	while (login(vClients))
+	stClient client;
+	while (login(vClients, client))
 	{
 
 	}

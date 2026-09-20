@@ -14,3 +14,9 @@ std::string ReadText(std::string msg, short width)
 	std::getline(std::cin, text);
 	return text;
 }
+
+void PressAnyKey(const std::string& msg)
+{
+	std::cout << msg << "...";
+	system("pause > 0");
+}

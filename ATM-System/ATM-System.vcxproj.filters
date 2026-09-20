@@ -79,14 +79,14 @@
     <ClInclude Include="scr\Header\Login\Login.h">
       <Filter>Header Files\Login/</Filter>
     </ClInclude>
-    <ClInclude Include="scr\Header\Application\System.h">
-      <Filter>Header Files\System/</Filter>
-    </ClInclude>
     <ClInclude Include="scr\Header\DataFileProcessing\DataFileProcessing.h">
       <Filter>Header Files\DataFileProcessing/</Filter>
     </ClInclude>
     <ClInclude Include="scr\Header\Helpers\Helpers.h">
       <Filter>Header Files\Helpers/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\Header\System\System.h">
+      <Filter>Header Files\System/</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
