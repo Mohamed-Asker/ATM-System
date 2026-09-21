@@ -11,6 +11,6 @@ int main()
 	stClient client;
 	while (login(vClients, client))
 	{
-
+		ExecuteMainMenuOption(vClients, client);
 	}
 }

@@ -48,4 +48,5 @@ bool login(std::vector <stClient>& vClients, stClient& client)
 		}
 		PressAnyKey("\nPress any key to continue");
 	}
+	return false;
 }

@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include "../../Header/Helpers/Helpers.h"
+#include "../../Header/System/System.h"
 
 
 
@@ -13,4 +16,40 @@ namespace SystemConfig
 {
 	std::string Separator = "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n";
 	short PrintStart = 25;
+}
+
+enum enMainMenuOptions
+{
+	mQuickWithdraw = 1,
+	mNoramlWithdraw = 2,
+	mDeposit = 3,
+	mCheckBalance = 4,
+	mLogout = 5
+};
+
+
+enMainMenuOptions ReadMainMenuOption()
+{
+	return static_cast<enMainMenuOptions>(ReadNubmerInRange("Choose what do you want to do[1:5]:", 1, 5));
+}
+
+
+void ExecuteMainMenuOption(std::vector <stClient>& vClients, stClient& client)
+{
+	bool logout = false;
+	do
+	{
+		ResetScreen();
+		PrintMainMenuScreen();
+		switch (ReadMainMenuOption())
+		{
+
+
+
+
+		case enMainMenuOptions::mLogout:
+			logout = true;
+			break;
+		}
+	} while (!logout);
 }

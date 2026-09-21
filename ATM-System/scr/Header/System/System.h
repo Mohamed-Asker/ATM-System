@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 
 struct stClient
@@ -22,3 +23,7 @@ namespace SystemConfig
 	extern std::string Separator;
 	extern short PrintStart;
 }
+
+void PrintMainMenuScreen();
+
+void ExecuteMainMenuOption(std::vector <stClient>& vClients, stClient& client);
