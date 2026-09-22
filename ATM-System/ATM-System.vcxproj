@@ -147,7 +147,9 @@
     <ClCompile Include="scr\Source\Login\Login.cpp" />
     <ClCompile Include="scr\Source\Login\LoginUi.cpp" />
     <ClCompile Include="scr\Source\System\System.cpp" />
+    <ClCompile Include="scr\Source\System\SystemInput.cpp" />
     <ClCompile Include="scr\Source\System\SystemOperations.cpp" />
+    <ClCompile Include="scr\Source\System\SystemOperationsHelpers.cpp" />
     <ClCompile Include="scr\Source\System\SystemUi.cpp" />
   </ItemGroup>
   <ItemGroup>

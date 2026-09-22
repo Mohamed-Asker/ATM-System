@@ -18,21 +18,6 @@ namespace SystemConfig
 	short PrintStart = 25;
 }
 
-enum enMainMenuOptions
-{
-	mQuickWithdraw = 1,
-	mNoramlWithdraw = 2,
-	mDeposit = 3,
-	mCheckBalance = 4,
-	mLogout = 5
-};
-
-
-enMainMenuOptions ReadMainMenuOption()
-{
-	return static_cast<enMainMenuOptions>(ReadNubmerInRange("Choose what do you want to do[1:5]:", 1, 5));
-}
-
 namespace MainMenu
 {
 	void ExecuteMainMenuOption(std::vector <stClient>& vClients, std::string& accNumber)
@@ -42,8 +27,11 @@ namespace MainMenu
 		{
 			ResetScreen();
 			MainMenu::PrintMainMenuScreen();
-			switch (ReadMainMenuOption())
+			switch (MainMenu::ReadMainMenuOption())
 			{
+			case enMainMenuOptions::mQuickWithdraw:
+				QuickWithdraw::ShowQuickWithdrawScreen(vClients, accNumber);
+				break;
 
 
 			case enMainMenuOptions::mCheckBalance:

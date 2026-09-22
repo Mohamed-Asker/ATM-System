@@ -33,3 +33,22 @@ namespace CheckBalance
 		std::cout << SystemConfig::Separator;
 	}
 }
+
+namespace QuickWithdraw
+{
+	void PrintHeaderOfQuickWithdraw()
+	{
+		std::cout << SystemConfig::Separator;
+		printf("%*s", SystemConfig::PrintStart + 10, "QUICK WITHDRAW SCREEN\n");
+		std::cout << SystemConfig::Separator;
+	}
+
+	void PrintQuickWithdrawOptions()
+	{
+		PrintHeaderOfQuickWithdraw();
+		std::cout << "  [1]20    [2]50    [3]100\n";
+		std::cout << "  [4]200   [5]400   [6]600\n";
+		std::cout << "  [7]800   [8]1000  [9]Exit\n";
+		std::cout << SystemConfig::Separator;
+	}
+}

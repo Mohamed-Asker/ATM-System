@@ -72,6 +72,12 @@
     <ClCompile Include="scr\Source\System\SystemOperations.cpp">
       <Filter>Source Files\System/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\Source\System\SystemInput.cpp">
+      <Filter>Source Files\System/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\Source\System\SystemOperationsHelpers.cpp">
+      <Filter>Source Files\System/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
