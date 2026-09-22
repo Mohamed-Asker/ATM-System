@@ -7,4 +7,4 @@
 
 void PrintHeaderOfLoginScreen(short number);
 
-bool login(std::vector <stClient>& vClients, stClient& client);
+bool login(std::vector <stClient>& vClients, std::string& accNumber);

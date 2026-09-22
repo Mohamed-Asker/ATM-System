@@ -33,23 +33,27 @@ enMainMenuOptions ReadMainMenuOption()
 	return static_cast<enMainMenuOptions>(ReadNubmerInRange("Choose what do you want to do[1:5]:", 1, 5));
 }
 
-
-void ExecuteMainMenuOption(std::vector <stClient>& vClients, stClient& client)
+namespace MainMenu
 {
-	bool logout = false;
-	do
+	void ExecuteMainMenuOption(std::vector <stClient>& vClients, std::string& accNumber)
 	{
-		ResetScreen();
-		PrintMainMenuScreen();
-		switch (ReadMainMenuOption())
+		bool logout = false;
+		do
 		{
+			ResetScreen();
+			MainMenu::PrintMainMenuScreen();
+			switch (ReadMainMenuOption())
+			{
 
 
+			case enMainMenuOptions::mCheckBalance:
+				CheckBalance::ShowCheckBalanceScreen(vClients, accNumber);
+				break;
 
-
-		case enMainMenuOptions::mLogout:
-			logout = true;
-			break;
-		}
-	} while (!logout);
+			case enMainMenuOptions::mLogout:
+				logout = true;
+				break;
+			}
+		} while (!logout);
+	}
 }

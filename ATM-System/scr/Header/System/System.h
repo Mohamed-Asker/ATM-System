@@ -24,6 +24,15 @@ namespace SystemConfig
 	extern short PrintStart;
 }
 
-void PrintMainMenuScreen();
+namespace MainMenu
+{
+	void PrintMainMenuScreen();
+	void ExecuteMainMenuOption(std::vector <stClient>& vClients, std::string& accNumber);
+}
 
-void ExecuteMainMenuOption(std::vector <stClient>& vClients, stClient& client);
+
+namespace CheckBalance
+{
+	void PrintHeaderOfCheckBalance();
+	void ShowCheckBalanceScreen(std::vector <stClient>& vClients, std::string& accNumber);
+}

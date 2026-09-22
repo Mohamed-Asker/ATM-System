@@ -6,13 +6,13 @@
 
 
 
-bool FindClientByAccountNumberAndPinCode(std::vector <stClient>& vClients, std::string& accNumber, std::string& PinCode, stClient& client)
+bool FindClientByAccountNumberAndPinCode(std::vector <stClient>& vClients, std::string& accNumber, std::string& PinCode, std::string& tempAccNumber)
 {
 	for (stClient& tempClient : vClients)
 	{
 		if (tempClient.accNumber == accNumber && tempClient.PinCode == PinCode)
 		{
-			client = tempClient;
+			tempAccNumber = tempClient.accNumber;
 			return true;
 		}
 	}
@@ -21,7 +21,7 @@ bool FindClientByAccountNumberAndPinCode(std::vector <stClient>& vClients, std::
 
 
 
-bool login(std::vector <stClient>& vClients, stClient& client)
+bool login(std::vector <stClient>& vClients, std::string& tempAccNumber)
 {
 	std::string accNumber;
 	std::string PinCode;
@@ -34,7 +34,7 @@ bool login(std::vector <stClient>& vClients, stClient& client)
 		accNumber = ReadText("Account Number", 15);
 		PinCode = ReadText("Pin Code", 15);
 
-		if (FindClientByAccountNumberAndPinCode(vClients, accNumber, PinCode, client))
+		if (FindClientByAccountNumberAndPinCode(vClients, accNumber, PinCode, tempAccNumber))
 			return true;
 		else
 		{
