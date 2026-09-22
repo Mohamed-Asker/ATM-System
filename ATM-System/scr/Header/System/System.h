@@ -23,6 +23,12 @@ namespace SystemConfig
 	extern std::string Separator;
 	extern short PrintStart;
 }
+namespace OperationsHelpers
+
+{
+	double CalculateBalanceAfterWithdraw(double accBalance, double WithdrawAmount);
+	bool ConfirmOperation(const std::string& msg);
+}
 
 namespace MainMenu
 {
@@ -50,15 +56,14 @@ namespace CheckBalance
 
 namespace QuickWithdraw
 {
-	enum enQuickWithdrawOptions
-	{
-		q20 = 20, q50 = 50, q100 = 100,
-		q200 = 200, q400 = 400, q600 = 600,
-		q800 = 800, q1000 = 1000, qExit = 9
-	};
-
 	void PrintQuickWithdrawOptions();
-	enQuickWithdrawOptions ReadQuickWihdrawOption();
-	double CalculateBalanceAfterWithdraw(double accBalance, double WithdrawAmount);
+	short ReadQuickWihdraw();
 	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber);
+}
+
+namespace NormalWithdraw
+{
+	void PrintHeaderOfNormalWithdraw();
+	int ReadAmountWithdraw();
+	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber);
 }
