@@ -8,7 +8,7 @@ namespace MainMenu
 {
 	enMainMenuOptions ReadMainMenuOption()
 	{
-		return static_cast<MainMenu::enMainMenuOptions>(ReadNubmerInRange("Choose what do you want to do[1:5]:", 1, 5));
+		return static_cast<MainMenu::enMainMenuOptions>(ReadNubmerInRange("Choose what do you want to do[1:5]", 1, 5));
 	}
 }
 

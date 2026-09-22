@@ -2,6 +2,7 @@
 #include <vector>
 #include "../../Header/System/System.h"
 #include "../../Header/Helpers/Helpers.h"
+#include "../../Header/DataFileProcessing/DataFileProcessing.h"
 
 
 namespace CheckBalance
@@ -60,5 +61,6 @@ namespace QuickWithdraw
 			}
 			break;
 		}
+		SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
 	}
 }

@@ -18,3 +18,8 @@ stClient ConvertClientDataLineToRecord(std::string& line, std::string delimiter)
 	client.accBalance = std::stod(vClients[4]);
 	return client;
 }
+
+std::string ConvertClientRecordToDataLine(stClient& client, std::string& delimiter)
+{
+	return client.accNumber + delimiter + client.PinCode + delimiter + client.cName + delimiter + client.cPhone + delimiter + std::to_string(client.accBalance);
+}

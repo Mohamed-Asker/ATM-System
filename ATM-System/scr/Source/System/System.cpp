@@ -34,6 +34,9 @@ namespace MainMenu
 				break;
 
 
+
+
+
 			case enMainMenuOptions::mCheckBalance:
 				CheckBalance::ShowCheckBalanceScreen(vClients, accNumber);
 				break;
