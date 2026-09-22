@@ -33,9 +33,9 @@ namespace MainMenu
 				QuickWithdraw::ShowQuickWithdrawScreen(vClients, accNumber);
 				break;
 
-
-
-
+			case enMainMenuOptions::mNoramlWithdraw:
+				NormalWithdraw::ShowNormalWithdrawScreen(vClients, accNumber);
+				break;
 
 			case enMainMenuOptions::mCheckBalance:
 				CheckBalance::ShowCheckBalanceScreen(vClients, accNumber);

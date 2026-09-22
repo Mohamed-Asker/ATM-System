@@ -52,3 +52,14 @@ namespace QuickWithdraw
 		std::cout << SystemConfig::Separator;
 	}
 }
+
+
+namespace NormalWithdraw
+{
+	void PrintHeaderOfNormalWithdraw()
+	{
+		std::cout << SystemConfig::Separator;
+		printf("%*s", SystemConfig::PrintStart + 11, "NORMAL WITHDRAW SCREEN\n");
+		std::cout << SystemConfig::Separator;
+	}
+}

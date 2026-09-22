@@ -29,7 +29,6 @@ namespace QuickWithdraw
 {
 	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber)
 	{
-		char answer;
 		ResetScreen();
 		QuickWithdraw::PrintQuickWithdrawOptions();
 
@@ -46,14 +45,11 @@ namespace QuickWithdraw
 						std::cout << "The amount exceeds your balance, make another choice";
 					else
 					{
-						std::cout << "Are you sure you want to perform this transaction[Y,N]: ";
-						std::cin >> answer;
-						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-						if (std::tolower(answer) == 'y')
+						if (ConfirmOperation("Are you sure you want to perform this trnasaction"))
 						{
 							tempClient.accBalance = CalculateBalanceAfterWithdraw(tempClient.accBalance, WithdrawOption);
 							std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "&";
+							SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
 						}
 					}
 					PressAnyKey("\nPress any key to go back to main menu");
@@ -61,6 +57,32 @@ namespace QuickWithdraw
 			}
 			break;
 		}
-		SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
+	}
+}
+
+
+namespace NormalWithdraw
+{
+	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber)
+	{
+		ResetScreen();
+		PrintHeaderOfNormalWithdraw(); 
+		int Amount;
+
+		for (stClient& tempClient : vClients)
+		{
+			if (tempClient.accNumber == accNumber)
+			{
+				Amount = ReadAmountWithdraw();
+				if (ConfirmOperation("Are you sure you want to perform this transaction"))
+				{
+					tempClient.accBalance = QuickWithdraw::CalculateBalanceAfterWithdraw(tempClient.accBalance, Amount);
+					std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "$\n";
+				}
+
+				break;
+			}
+		}
+		PressAnyKey("Press any key to go back to main menu");
 	}
 }

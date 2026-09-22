@@ -24,6 +24,8 @@ namespace SystemConfig
 	extern short PrintStart;
 }
 
+bool ConfirmOperation(const std::string& msg);
+
 namespace MainMenu
 {
 	enum enMainMenuOptions
@@ -61,4 +63,11 @@ namespace QuickWithdraw
 	enQuickWithdrawOptions ReadQuickWihdrawOption();
 	double CalculateBalanceAfterWithdraw(double accBalance, double WithdrawAmount);
 	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber);
+}
+
+namespace NormalWithdraw
+{
+	void PrintHeaderOfNormalWithdraw();
+	int ReadAmountWithdraw();
+	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber);
 }
