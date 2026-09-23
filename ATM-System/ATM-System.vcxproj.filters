@@ -83,6 +83,9 @@
     <None Include="..\.gitignore">
       <Filter>Source Files\MainRefrance/</Filter>
     </None>
+    <None Include="..\README.md">
+      <Filter>Source Files\MainRefrance/</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\Header\Login\Login.h">
