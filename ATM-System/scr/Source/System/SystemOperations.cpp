@@ -11,16 +11,10 @@ namespace CheckBalance
 	{
 		ResetScreen();
 		CheckBalance::PrintHeaderOfCheckBalance();
-		for (stClient& tempClient : vClients)
-		{
-			if (tempClient.accNumber == client.accNumber)
-			{
-				std::cout << "Your balance is: " << tempClient.accBalance << "$\n";
-				std::cout << SystemConfig::Separator;
-				break;
-			}
-		}
+		std::cout << "Your balance is: " << client.accBalance << "$\n";
+		std::cout << SystemConfig::Separator;
 		PressAnyKey("Press any key to go back to main menu");
+		
 	}
 }
 
