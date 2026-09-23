@@ -66,23 +66,28 @@ namespace NormalWithdraw
 		std::cout << "Your balance is: " << client.accBalance << "&\n";
 		int Amount = ReadAmountWithdraw();
 		
-		if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this transaction"))
+		if (client.accBalance < Amount)
+			std::cout << "The amount exceeds your balance, make another choice";
+		else
 		{
-			for (stClient& tempClient : vClients)
+			if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this transaction"))
 			{
-				if (tempClient.accNumber == client.accNumber)
+				for (stClient& tempClient : vClients)
 				{
+					if (tempClient.accNumber == client.accNumber)
 					{
-						tempClient.accBalance = OperationsHelpers::CalculateNewBalance(tempClient.accBalance, Amount, false);
-						std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "$\n";
-						SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
-						client.accBalance = tempClient.accBalance;
-						PressAnyKey("Press any key to go back to main menu");
+						{
+							tempClient.accBalance = OperationsHelpers::CalculateNewBalance(tempClient.accBalance, Amount, false);
+							std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "$\n";
+							SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
+							client.accBalance = tempClient.accBalance;
+						}
+						break;
 					}
-					break;
 				}
 			}
 		}
+		PressAnyKey("\nPress any key to go back to main menu");
 	}
 }
 
