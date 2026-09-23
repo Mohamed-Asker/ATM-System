@@ -7,13 +7,13 @@
 
 namespace CheckBalance
 {
-	void ShowCheckBalanceScreen(std::vector <stClient>& vClients, std::string& accNumber)
+	void ShowCheckBalanceScreen(std::vector <stClient>& vClients, stClient& client)
 	{
 		ResetScreen();
 		CheckBalance::PrintHeaderOfCheckBalance();
 		for (stClient& tempClient : vClients)
 		{
-			if (tempClient.accNumber == accNumber)
+			if (tempClient.accNumber == client.accNumber)
 			{
 				std::cout << "Your balance is: " << tempClient.accBalance << "$\n";
 				std::cout << SystemConfig::Separator;
@@ -27,35 +27,37 @@ namespace CheckBalance
 
 namespace QuickWithdraw
 {
-	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber)
+	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, stClient& client)
 	{
 		ResetScreen();
 		QuickWithdraw::PrintQuickWithdrawOptions();
+		std::cout << "Your balance is: " << client.accBalance << "&\n";
+		short Amount = ReadQuickWihdraw();
 
-		for (stClient& tempClient : vClients)
+		if (Amount != 0)
 		{
-			if (tempClient.accNumber == accNumber)
+			if (client.accBalance < Amount)
+				std::cout << "The amount exceeds your balance, make another choice";
+			else
 			{
-				std::cout << "Your balance is: " << tempClient.accBalance << "&\n";
-				short Amount = ReadQuickWihdraw();
-
-				if (Amount != 0)
+				if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this trnasaction"))
 				{
-					if (tempClient.accBalance < Amount)
-						std::cout << "The amount exceeds your balance, make another choice";
-					else
+					for (stClient& tempClient : vClients)
 					{
-						if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this trnasaction"))
+						if (tempClient.accNumber == tempClient.accNumber)
 						{
-							tempClient.accBalance = OperationsHelpers::CalculateBalanceAfterWithdraw(tempClient.accBalance, Amount);
+							tempClient.accBalance = OperationsHelpers::CalculateNewBalance(tempClient.accBalance, Amount, false);
 							std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "&";
 							SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
+							client.accBalance = tempClient.accBalance;
+			
+							break;
 						}
+
 					}
-					PressAnyKey("\nPress any key to go back to main menu");
 				}
 			}
-			break;
+			PressAnyKey("\nPress any key to go back to main menu");
 		}
 	}
 }
@@ -63,27 +65,56 @@ namespace QuickWithdraw
 
 namespace NormalWithdraw
 {
-	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber)
+	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, stClient& client)
 	{
 		ResetScreen();
 		PrintHeaderOfNormalWithdraw(); 
-		int Amount;
-
-		for (stClient& tempClient : vClients)
+		std::cout << "Your balance is: " << client.accBalance << "&\n";
+		int Amount = ReadAmountWithdraw();
+		
+		if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this transaction"))
 		{
-			if (tempClient.accNumber == accNumber)
+			for (stClient& tempClient : vClients)
 			{
-				Amount = ReadAmountWithdraw();
-				if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this transaction"))
+				if (tempClient.accNumber == client.accNumber)
 				{
-					tempClient.accBalance = OperationsHelpers::CalculateBalanceAfterWithdraw(tempClient.accBalance, Amount);
-					std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "$\n";
-					SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
+					{
+						tempClient.accBalance = OperationsHelpers::CalculateNewBalance(tempClient.accBalance, Amount, false);
+						std::cout << "Done successfully, new balance is: " << tempClient.accBalance << "$\n";
+						SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
+						client.accBalance = tempClient.accBalance;
+						PressAnyKey("Press any key to go back to main menu");
+					}
+					break;
 				}
-
-				break;
 			}
 		}
-		PressAnyKey("Press any key to go back to main menu");
+	}
+}
+
+namespace Deposit
+{
+	void ShowDepositScreen(std::vector <stClient>& vClients, stClient& client)
+	{
+		ResetScreen();
+		PrintHeaderOfDepositScreen();
+		std::cout << "Your balance is: " << client.accBalance << "&\n";
+		int Amount = ReadPostiveNumber("Deposit Amount");
+
+		if (OperationsHelpers::ConfirmOperation("Are you sure you want to perform this transaction"))
+		{
+			for (stClient& tempClient : vClients)
+			{
+				if (tempClient.accNumber == client.accNumber)
+				{
+					tempClient.accBalance = OperationsHelpers::CalculateNewBalance(tempClient.accBalance, Amount);
+					std::cout << "Done Successfully, new balance is: " << tempClient.accBalance << "$\n";
+					SaveDataToFile(vClients, SystemCore::ClientDataFile, SystemCore::delimiter);
+					client.accBalance = tempClient.accBalance;
+					PressAnyKey("Press any key to go back to main menu");
+					break;
+				}
+			}
+		}
 	}
 }

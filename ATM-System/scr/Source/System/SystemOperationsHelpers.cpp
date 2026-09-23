@@ -4,9 +4,9 @@
 
 namespace OperationsHelpers
 {
-	double CalculateBalanceAfterWithdraw(double accBalance, double WithdrawAmount)
+	double CalculateNewBalance(double accBalance, double Amount, bool Deposit)
 	{
-		return accBalance - WithdrawAmount;
+		return (Deposit) ? accBalance + Amount : accBalance - Amount;
 	}
 
 	bool ConfirmOperation(const std::string& msg)
@@ -14,6 +14,7 @@ namespace OperationsHelpers
 		char answer;
 		std::cout << msg << "[Y,N]: ";
 		std::cin >> answer;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		return std::tolower(answer) == 'y';
 	}
 }

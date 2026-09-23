@@ -20,7 +20,7 @@ namespace SystemConfig
 
 namespace MainMenu
 {
-	void ExecuteMainMenuOption(std::vector <stClient>& vClients, std::string& accNumber)
+	void ExecuteMainMenuOption(std::vector <stClient>& vClients, stClient& client)
 	{
 		bool logout = false;
 		do
@@ -30,15 +30,19 @@ namespace MainMenu
 			switch (MainMenu::ReadMainMenuOption())
 			{
 			case enMainMenuOptions::mQuickWithdraw:
-				QuickWithdraw::ShowQuickWithdrawScreen(vClients, accNumber);
+				QuickWithdraw::ShowQuickWithdrawScreen(vClients, client);
 				break;
 
 			case enMainMenuOptions::mNoramlWithdraw:
-				NormalWithdraw::ShowNormalWithdrawScreen(vClients, accNumber);
+				NormalWithdraw::ShowNormalWithdrawScreen(vClients, client);
+				break;
+
+			case enMainMenuOptions::mDeposit:
+				Deposit::ShowDepositScreen(vClients, client);
 				break;
 
 			case enMainMenuOptions::mCheckBalance:
-				CheckBalance::ShowCheckBalanceScreen(vClients, accNumber);
+				CheckBalance::ShowCheckBalanceScreen(vClients, client);
 				break;
 
 			case enMainMenuOptions::mLogout:

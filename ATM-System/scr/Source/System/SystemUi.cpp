@@ -63,3 +63,13 @@ namespace NormalWithdraw
 		std::cout << SystemConfig::Separator;
 	}
 }
+
+namespace Deposit
+{
+	void PrintHeaderOfDepositScreen()
+	{
+		std::cout << SystemConfig::Separator;
+		printf("%*s", SystemConfig::PrintStart + 7, "DEPOSIT SCREEN\n");
+		std::cout << SystemConfig::Separator;
+	}
+}

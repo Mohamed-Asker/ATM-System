@@ -26,7 +26,7 @@ namespace SystemConfig
 namespace OperationsHelpers
 
 {
-	double CalculateBalanceAfterWithdraw(double accBalance, double WithdrawAmount);
+	double CalculateNewBalance(double accBalance, double Amount, bool Deposit = true);
 	bool ConfirmOperation(const std::string& msg);
 }
 
@@ -43,14 +43,14 @@ namespace MainMenu
 
 	enMainMenuOptions ReadMainMenuOption();
 	void PrintMainMenuScreen();
-	void ExecuteMainMenuOption(std::vector <stClient>& vClients, std::string& accNumber);
+	void ExecuteMainMenuOption(std::vector <stClient>& vClients, stClient& client);
 }
 
 
 namespace CheckBalance
 {
 	void PrintHeaderOfCheckBalance();
-	void ShowCheckBalanceScreen(std::vector <stClient>& vClients, std::string& accNumber);
+	void ShowCheckBalanceScreen(std::vector <stClient>& vClients, stClient& client);
 }
 
 
@@ -58,12 +58,18 @@ namespace QuickWithdraw
 {
 	void PrintQuickWithdrawOptions();
 	short ReadQuickWihdraw();
-	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber);
+	void ShowQuickWithdrawScreen(std::vector <stClient>& vClients, stClient& client);
 }
 
 namespace NormalWithdraw
 {
 	void PrintHeaderOfNormalWithdraw();
 	int ReadAmountWithdraw();
-	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, std::string& accNumber);
+	void ShowNormalWithdrawScreen(std::vector <stClient>& vClients, stClient& client);
+}
+
+namespace Deposit
+{
+	void PrintHeaderOfDepositScreen();
+	void ShowDepositScreen(std::vector <stClient>& vClients, stClient& client);
 }

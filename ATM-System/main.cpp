@@ -8,9 +8,9 @@
 int main()
 {
 	std::vector <stClient> vClients = LoadClientDataFromFile(SystemCore::ClientDataFile, SystemCore::delimiter);
-	std::string accNumber;
-	while (login(vClients, accNumber))
+	stClient client;
+	while (login(vClients, client))
 	{
-		MainMenu::ExecuteMainMenuOption(vClients, accNumber);
+		MainMenu::ExecuteMainMenuOption(vClients, client);
 	}
 }
